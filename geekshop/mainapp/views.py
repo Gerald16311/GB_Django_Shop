@@ -22,6 +22,7 @@ def products(request):
         for i in data:
             links_menu.append(i)
 
+
     context = {
         'title': title,
         'links_menu': links_menu,
