@@ -3,8 +3,8 @@
 	{% if request.resolver_match.url_name == 'main' %}
 	active
 	{% endif %}">домой</a></li>
-	<li><a href="{% url 'products' %}" class="
-	{% if request.resolver_match.url_name == 'products' %}
+	<li><a href="{% url 'products:main' %}" class="
+	{% if request.resolver_match.url_name == 'products:main' %}
 	active
 	{% endif %}">продукты</a></li>
 	<li><a href="{% url 'contacts' %}"class="

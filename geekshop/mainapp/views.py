@@ -12,15 +12,17 @@ import json
 # ]
 # with open('links_menu.json', 'w') as f:
 #     json.dump(links_menu, f)
+from mainapp.models import ProductCategory
 
 
 def products(request):
     title = "Каталог"
-    links_menu = []
-    with open('mainapp/links_menu.json', 'r') as f:
-        data = json.loads(f.read())
-        for i in data:
-            links_menu.append(i)
+    links_menu = ProductCategory.objects.all()
+
+    # with open('mainapp/links_menu.json', 'r') as f:
+    #     data = json.loads(f.read())
+    #     for i in data:
+    #         links_menu.append(i)
 
     context = {
         'title': title,
