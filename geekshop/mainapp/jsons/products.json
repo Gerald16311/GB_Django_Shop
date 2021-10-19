@@ -1,0 +1,30 @@
+[
+  {
+      "category": "Дом" ,
+      "name": "Лампа" ,
+      "image": "products_images/product-1.jpg" ,
+      "short_description": "Настольная лампа" ,
+      "description": "темплый свет" ,
+      "prise": "1500.00" ,
+      "quantity": 100
+  } ,
+  {
+
+      "category": "Офис" ,
+      "name": "офисное кресло" ,
+      "image": "products_images/product-4.jpg" ,
+      "short_description": "Офисное кресло" ,
+      "description": "Замечательное офисное кресло" ,
+      "prise": "10000.00"
+  } ,
+  {
+      "category": "Офис" ,
+      "name": "Ваза" ,
+      "image": "products_images/product-61.jpg" ,
+      "short_description": "Дизайнерская ваза" ,
+      "description": "восхитительная дизайнерская ваза" ,
+      "prise": "3000.00" ,
+      "quantity": 100
+    }
+
+]
