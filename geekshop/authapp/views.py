@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import auth
-from django.urls import reverse
+from  django.urls import reverse
 
 from authapp.forms import ShopUserLoginForm, ShopUserRegisterForm, ShopUserEditForm
 
@@ -18,12 +18,12 @@ def login(request):
             auth.login(request, user)
             return HttpResponseRedirect(reverse('main'))
 
-    content = {
+    context = {
         'title': title,
         'login_form': login_form
     }
 
-    return render(request, 'authapp/login.html', content)
+    return render(request, 'authapp/login.html', context)
 
 
 def logout(request):
@@ -68,6 +68,3 @@ def edit(request):
     }
 
     return render(request, 'authapp/edit.html', context)
-
-
-
