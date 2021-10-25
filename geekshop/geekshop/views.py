@@ -16,6 +16,7 @@ def main(request):
         'title': title,
         'products': products,
         'basket': basket,
+        'basket_count': basket
     }
     return render(request, 'geekshop/index.html', context)
 
