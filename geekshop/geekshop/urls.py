@@ -1,4 +1,5 @@
 """geekshop URL Configuration
+
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -25,6 +26,7 @@ urlpatterns = [
     path('products/', include('mainapp.urls', namespace='products')),
     path('auth/', include('authapp.urls', namespace='auth')),
     path('basket/', include('basketapp.urls', namespace='basket')),
+    path('admin_staff/', include('adminapp.urls', namespace='admin_staff')),
 ]
 
 if settings.DEBUG:

@@ -14,9 +14,7 @@ def basket(request):
     context = {
         'basket': basket,
     }
-    return render(request, 'basketapp/templates/basket.html', context)
-
-
+    return render(request, 'basketapp/basket.html', context)
 
 
 @login_required

@@ -7,39 +7,7 @@
 
 {% block content %}
 		<div class="hero-white">
-			<div class="header clearfix">
-				<a href="/" class="logo"></a>
-				<ul class="menu">
-					<li><a href="/">домой</a></li>
-					<li><a href="/products/" class="active">продукты</a></li>
-					<li><a href="/contacts/">контакты</a></li>
-                    {% if user.is_authenticated %}
-                        <li>
-                            <a href="{% url 'auth:edit' %}">
-                                {{ user.first_name|default:'Пользователь' }}
-                            </a>
-                        </li>
-                        {% if basket %}
-                            <li><a href="{% url 'basket:view' %}">Корзина</a>
-                                <span>
-                                    {{ basket.0.total_cost|floatformat:0 }} руб.
-                                    ({{ basket.0.total_quantity }} шт.)
-                                </span>
-                            </li>
-
-                        {% endif %}
-                    {% endif %}
-                    <li>
-                        {% if user.is_authenticated %}
-                          <a href="{% url 'auth:logout' %}">выйти</a>
-                        {% else %}
-                          <a href="{% url 'auth:login' %}">войти</a>
-                        {% endif %}
-                    </li>
-				</ul>
-				<a href="#" class="search"></a>
-                <a href="#" class="basket"></a>
-			</div>
+			    {% include 'geekshop/includes/inc_main_menu.html' %}
 		</div>
 
 		<div class="details">
@@ -67,17 +35,17 @@
 					</div>
 					<div class="slider-control">
 						<div class="block">
-							<a href="#"><img src="{% static 'geekshop/img/controll.jpg' %}" alt="" height="268px" width="268px>
+							<a href="#"><img src="{% static 'geekshop/img/controll.jpg' %}" alt="">
 								<div class="text"></div>
 							</a>
 						</div>
 						<div class="block">
-							<a href="#"><img src="{% static 'geekshop/img/controll1.jpg' %}" alt="" height="268px" width="268px>
+							<a href="#"><img src="{% static 'geekshop/img/controll1.jpg' %}" alt="">
 								<div class="text"></div>
 							</a>
 						</div>
 						<div class="block">
-							<a href="#"><img src="{% static 'geekshop/img/controll2.jpg' %}" alt="" height="268px" width="268px>
+							<a href="#"><img src="{% static 'geekshop/img/controll2.jpg' %}" alt="">
 								<div class="text"></div>
 							</a>
 						</div>
@@ -106,7 +74,7 @@
 				<div class="related-products clearfix">
                     {% for same_product in same_products %}
 					    <div class="block">
-                            <a href="#"><img src="/media/{{ same_product.image }}" alt="" height="268px" width="268px">
+                            <a href="#"><img src="/media/{{ same_product.image }}" alt="">
                                 <div class="text">
                                     <img src="{% static 'geekshop/img/icon-hover.png' %}" alt="img">
                                     <h4>{{ same_product.name }}</h4>
