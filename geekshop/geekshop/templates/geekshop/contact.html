@@ -1,20 +1,13 @@
 {% extends 'geekshop/base.html' %}
 {% load static %}
 
-{% block menu %}
+{% block content %}
 		<div class="hero">
-			<div class="header clearfix">
-				<a href="/" class="logo"></a>
-				{% include 'geekshop/includes/menu.html' %}
-				<a href="#" class="search"></a>
-                <a href="#" class="basket"></a>
-			</div>
+            {% include 'geekshop/includes/inc_main_menu.html' %}
 			<h1>наши контакты</h1>
 		</div>
-{% endblock %}
 
-{% block content %}
-	<div class="location">
+		<div class="location">
 			<div class="location-1">
 				<i class="fa fa-map-marker fa-5x"></i>
 				<h4>Москва</h4>
@@ -64,6 +57,4 @@
 				</div>
 			</div>
 		</div>
-	<div class="clr"></div>
 {% endblock %}
-
