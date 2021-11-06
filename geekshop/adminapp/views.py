@@ -188,12 +188,26 @@ def product_create(request, pk):
     return render(request, 'adminapp/product_update.html', context)
 
 
-def product_read(request, pk):
-    title = 'продукт/подробнее'
-    product = get_object_or_404(Product, pk=pk)
-    context = {'title': title, 'object': product, }
+class CategoryProductsReadView(ListView):
+    model = Product
+    context_object_name = 'objects'
+    template_name = 'adminapp/products.html'
 
-    return render(request, 'adminapp/product_read.html', context)
+    def get_queryset(self):
+        filtered_products = Product.objects.filter(category__pk=self.kwargs['pk'])
+        return filtered_products
+
+    def get_context_data(self):
+        context = super(CategoryProductsReadView, self).get_context_data()
+        context['category'] = self.kwargs.get('pk')
+        return context
+
+# def product_read(request, pk):
+#     title = 'продукт/подробнее'
+#     product = get_object_or_404(Product, pk=pk)
+#     context = {'title': title, 'object': product, }
+#
+#     return render(request, 'adminapp/product_read.html', context)
 
 
 def product_update(request, pk):

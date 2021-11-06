@@ -9,10 +9,10 @@
 	margin-bottom: 22px;
 }
 
-.category-products {
-	display: flex;
-	justify-content: space-evenly;
+.related-products, .category-products {
+	display: inline-block;
 }
+
 .products .block a img {
 	float: left;
 }
@@ -63,4 +63,10 @@
 }
 .slider-control a:hover .text {
 	display: block;
+}
+
+.paginator {
+	width: 100%;
+    float: left;
+    padding-left: 15px;
 }
